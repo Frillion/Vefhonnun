@@ -1,0 +1,468 @@
+*, *:before, *:after {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+    box-sizing: border-box; 
+}
+
+/*heimild: https://gridbyexample.com/examples/example13/ */
+
+/* ====== GRID Area ====== */
+.topnav{
+  grid-area: topnav;
+}
+header{
+  grid-area: header;
+}
+.content{
+  grid-area: content;
+}
+footer{
+  grid-area: footer;
+}
+.haegri{
+  grid-area: haegri;
+}
+.midja{
+  grid-area: midja;
+}
+
+
+
+/* ====== Social media ====== */
+.smediabar{
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  z-index: 1;
+}
+.smediabar a{
+  margin-left:10px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.box_1{
+  display:block;
+  width:2.5em;
+  height:2.5em;
+  background-color: #3b5998;
+  text-align: center;
+  padding:5px;
+}
+.box_2{
+  display:block;
+  width:2.5em;
+  height:2.5em;
+  background-color:#ff0000;
+  text-align: center;
+  padding:5px;
+}
+.box_3{
+  display:block;
+  width:2.5em;
+  height:2.5em;
+  background-color:#fffc00;
+  text-align: center;
+  padding:5px;
+}
+.box_4{
+  display:block;
+  width:2.5em;
+  height:2.5em;
+  background-color:#cb2027;
+  text-align: center;
+  padding:5px;
+}
+
+/* ====== GRID Template Areas ===== */
+body{
+  display: grid;
+  grid-gap: 0;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer"
+    "topnav";
+}
+
+/* ====== Base litir + padding ====== */
+
+body {
+  line-height: 1.5em;
+}
+.topnav {
+  background-color:black; 
+}
+header {
+  background: linear-gradient(lightgreen,green);
+  border: 2.5px solid black;
+}
+footer {
+  background: linear-gradient(lightgreen,green); 
+  color:white;
+  border: 2.5px solid black;
+}
+.midja {
+  background-color:black; 
+  color:white;
+}
+.vinstri, 
+.haegri {
+  background:linear-gradient(lightgreen,green);
+  border: 2.5px solid black;
+}
+
+header,
+footer,
+.midja,
+.vinstri, 
+.haegri {
+  padding: 1em; 
+}
+
+footer a{
+  color:blue;
+}
+
+/* ====== leturstílar ====== */
+
+header h1 {
+  color: #fff;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.midja h2 {
+  margin: .7em 0 .8em 0;
+}
+.midja h4 {
+  text-align: justify;
+  margin: .4em 0;
+}
+.midja p {
+  text-align: justify;
+}
+
+.midja a{
+  color:blue;
+}
+/* ========================================
+  Efnisyfirlit
+  ======================================== */
+.Efni{
+  display: none;
+}
+label {
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 9px;
+  transition: all .15s ease;
+  background: black;
+  text-align: center;
+
+}
+.Efni + label{
+  visibility:visible; 
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width: 100%;
+  z-index: 1000000;
+}
+label:hover {
+  color: grey;
+}
+.Efni:checked + label {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: #9799a7;
+}
+.topnav {
+  visibility:visible; 
+  position: fixed;
+  right:-100em;
+  overflow: hidden;
+  transition: all .15s ease;
+  z-index: 1000000;
+}
+.Efni:checked ~ .topmenu {
+  visibility: visible;
+  position:fixed;
+  left:0px;
+  bottom:35px;
+  width:100%;
+  z-index: 1000000;
+}
+
+.topmenu {
+  visibility: visible;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  z-index: 1000000; 
+  flex-flow: column;
+  justify-content: center;
+  background: black;
+}
+.topmenu li {
+  border: 1px solid white;
+  padding: 0;
+}
+
+.topmenu a {
+  display: block;     /* ath! */
+  color: white;
+  background: black;
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+.topmenu a:hover {
+  display: block;     /* ath! */
+  color: black;
+  background: linear-gradient(lightgreen,green);
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+
+
+/* =======================================
+   Myndvinnsla  
+  ======================================== */
+img{
+  max-width: 100%;
+  height:auto;
+  display:block;
+}
+
+.imgs img{
+  margin: 0;
+  padding: 0;
+  border: white 1px solid;
+}
+
+.imgs{
+  width:160px;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+}
+/*  myndir <img> alltaf í 100% stærð munið að vinna og 
+    þjappa myndir í photoshop ! */
+
+
+/*===============================
+          Ad
+=================================*/
+.ad{
+  display:block;
+  position:relative;
+  overflow: hidden;
+  height:600px;
+  width: 300px;
+  background-image:url("../myndir/taekniskoli.jpg");
+  background-repeat: repeat;
+  text-decoration: none;
+  color:black;
+  animation-name:transition;
+  animation-duration: 40s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+}
+.adbox{
+  background:linear-gradient(rgba(0,0,255,0.6),rgba(0,0,255,0.3));
+  display: block;
+  position: absolute;
+  z-index: 39;
+  transform: rotate(295deg);
+  height:450px;
+  width: 280px;
+  bottom:25px;
+  left:-4.5px;
+  z-index: 3;
+}
+.anim{
+  overflow: hidden;
+  position:relative;
+  top:540px;
+  transform: rotate(65deg);
+  height:1000px;
+  width:1000px;
+  animation-name: move;
+  animation-duration: 20s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  left:30px;
+  z-index: 2;
+
+}
+.adtexti{
+animation-name:transp;
+animation-duration:20s;
+animation-delay: 3s;
+animation-iteration-count: infinite;
+position: absolute;
+left:50px;
+top:280px;
+color: black;
+z-index: 9999;
+opacity:0;
+}
+.admynd{
+  animation-name: transp;
+  animation-delay: 3s;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  position:absolute;
+  opacity: 0;
+}
+@keyframes transition{
+  0% {background-image: url("../myndir/taekniskoli.jpg");}
+  
+  100% {background-image: url("../myndir/taekniskoli.jpg");}
+}
+@keyframes transp{
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  75% {opacity:1;}
+  80% {opacity:0;}
+  100% {opacity: 0;}
+}
+@keyframes move {
+  0% {top:540px;}
+  25% {top:540px;}
+  50% {top: 90px;}
+  75% {top: 90px;}
+  100% {top:540px;}
+}
+
+/*  ========================================
+  Viðmið - breakpoints 30em = 480px + 
+  ========================================*/
+
+@media screen and (min-width: 30em) {  /* það má ekki setja slaufusvigann í næstu línu, þá virkar ekki viðmiðið */
+  .imgs{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width:324px;
+}
+}
+
+/*  ========================================
+  Viðmið - breakpoints 37.5em = 600px + 
+  ========================================*/
+@media screen and (min-width: 37.5em) {
+  .content {
+    display: grid;
+    grid-gap:0;
+    grid-template-areas:
+      "midja haegri";
+  }
+}
+/* ========================================
+  Viðmið - breakpoints 48em = 760px +
+  ======================================== */
+@media screen and (min-width: 48em) {
+  body{
+    display: grid;
+    grid-gap:0;
+    grid-template-areas: 
+      "topnav"
+      "header"
+      "content"
+      "footer"
+  }
+  .content{
+    display: grid;
+    grid-gap:0;
+    grid-template-areas:
+      "midja haegri";
+  }
+  .Efni + label{
+  position: relative;
+  left:-100em;
+  width: 100%;
+}
+  .topnav{
+    position:relative;
+    top:0px;
+    right:0px;
+    height: 70px;
+    z-index: 0;
+  }
+  .topmenu {
+  z-index: 0;
+  position:relative;
+  list-style: none;
+  top:-30px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.imgs{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  width:648px;
+}
+}
+
+/* ========================================
+  Viðmið - breakpoints 60em = 960px +
+  ======================================== */
+@media screen and (min-width: 60em) {
+  body{
+    max-width: 60em;
+    margin: 0 auto;
+  }
+  .smediabar{
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  top:4em;
+  left:-.5em;
+  border-left:black solid 3px;
+}
+.smediabar a{
+  display: block;
+  margin-left: 0px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+}
+  .content{
+    grid-template-areas: 
+      "midja haegri";
+
+    grid-template-columns: 4fr 1fr;
+  }
+  .imgs{
+    grid-template-columns: repeat(4, 83.6%)
+  }
+
+}
+/* ========================================
+  Viðmið - breakpoints 80em = 1600px +
+  ======================================== */
+@media screen and (min-width: 80em){
+  body{
+    max-width: 77em;
+  }
+  .topnav{
+  	height: 45px;
+  }
+}
+
+@media screen and (min-width: 100em){
+	body{
+		max-width: 95em;
+	}
+}

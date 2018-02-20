@@ -1,0 +1,236 @@
+*, *:before, *:after {
+    box-sizing: border-box; 
+}
+
+/*heimild: https://gridbyexample.com/examples/example13/ */
+
+/* ====== GRID Area ====== */
+.topnav {
+  grid-area: topnav;
+}
+header {
+  grid-area: header;
+}
+.content {
+  grid-area: maincontent;
+}
+footer {
+  grid-area: footer;
+}
+.midja {
+  grid-area: midja;
+}
+.vinstri {
+  grid-area: vinstri;
+}
+.haegri {
+  grid-area: haegri;
+}
+/* ====== GRID Template Areas ===== */
+body{
+  display: grid;
+  grid-gap: 0;
+  grid-template-areas: 
+    "header"
+    "maincontent"
+    "footer"
+    "topnav";
+}
+
+/* ====== Base litir + padding ====== */
+
+body {
+  line-height: 1.5em;
+}
+.topnav {
+  background-color: pink; 
+}
+header {
+  background-color: tomato; 
+}
+footer {
+  color: white;
+  background-color: tomato; 
+}
+.midja {
+  color: white;
+  background-color: salmon; 
+}
+.vinstri, 
+.haegri {
+  background-color: tomato; 
+}
+
+header,
+footer,
+.midja,
+.vinstri, 
+.haegri {
+  padding: 1em; 
+}
+
+/* ====== leturstílar ====== */
+
+header h1 {
+  color: #fff;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.midja h2 {
+  margin: .7em 0 .8em 0;
+}
+.midja h4 {
+  text-align: justify;
+  margin: .4em 0;
+}
+.midja p {
+  text-align: justify;
+}
+
+/* ========================================
+  Efnisyfirlit
+  ======================================== */
+
+.topmenu {
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+}
+.topmenu li {
+  border: 0;
+  border-bottom: 1px solid lime; 
+  padding: 0;
+}
+
+.topmenu a {
+  display: block;     /* ath! */
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+
+/*===========================
+      Social media
+=============================*/
+.smediabar{
+  display:flex;
+  flex-flow: row;
+  position:relative;
+}
+.box1{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  background-color: red;
+  text-align: center;
+  padding:7px;
+}
+.box2{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  background-color: pink;
+  text-align: center;
+  padding:7px;
+}
+.box3{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  background-color: salmon;
+  text-align: center;
+  padding:7px;
+}
+.box4{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  background-color: yellow;
+  text-align: center;
+  padding:7px;
+}
+.box1 a{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  text-align: center;
+}
+.box2 a{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  text-align: center;
+}
+.box3 a{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  text-align: center;
+}
+.box4 a{
+  display: block;
+  width: 2.5em;
+  height:2.5em;
+  text-align: center;
+}
+
+/* =======================================
+   Myndvinnsla  
+  ======================================== */
+
+/*  myndir <img> alltaf í 100% stærð munið að vinna og 
+    þjappa myndir í photoshop ! */
+
+
+/*  ========================================
+  Viðmið - breakpoints 30em = 480px + 
+  ========================================*/
+
+@media screen and (min-width: 30em) {  /* það má ekki setja slaufusvigann í næstu línu, þá virkar ekki viðmiðið */
+
+  
+}
+
+/*  ========================================
+  Viðmið - breakpoints 37.5em = 600px + 
+  ========================================*/
+@media screen and (min-width: 37.5em) {
+  .content {
+    display: grid;
+    grid-gap:0;
+    grid-template-areas:
+      "haegri midja"
+      "vinstri midja";
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* ========================================
+  Viðmið - breakpoints 48em = 760px +
+  ======================================== */
+@media screen and (min-width: 48em) {
+  body{
+    grid-template-areas: 
+    "topnav"
+    "header"
+    "maincontent"
+    "footer"
+  }
+}
+
+/* ========================================
+  Viðmið - breakpoints 60em = 960px +
+  ======================================== */
+@media screen and (min-width: 60em) {
+body{max-width: 60em;
+margin: 0 auto;}
+.content{grid-template-areas: 
+  "vinstri midja haegri";
+grid-template-columns: 1fr 3fr 1fr; }
+
+}
+/* ========================================
+  Viðmið - breakpoints 80em = 1600px +
+  ======================================== */
+

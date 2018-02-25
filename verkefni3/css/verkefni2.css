@@ -346,23 +346,17 @@ color:white;
   background:rgb(0,0,0);
   background: rgba(0,0,0,0.4);
 }
-.popupcontent{
+#popupcontent{
   color:black;
   background-color: white;
   margin:auto;
   border:1px solid black;
-  width:50%;
+  width:100%;
   padding:20px;
   position: absolute;
-  left:400px;
-  top:300px;
-  height:400px;
+  top:33%;
+  height:300px;
   z-index: 1;
-}
-.popupcontent p{
-  position:absolute;
-  left:46%;
-  bottom:46%;
 }
 .close{
   color: grey;
@@ -425,6 +419,20 @@ color:white;
     grid-template-areas:
       "midja haegri";
   }
+#popupcontent{
+  color:black;
+  background-color: white;
+  margin:auto;
+  border:1px solid black;
+  width:70%;
+  padding:20px;
+  position: absolute;
+  left:15%;
+  top:10%;
+  height:300px;
+  z-index: 1;
+}
+
 }
 /* ========================================
   Viðmið - breakpoints 48em = 760px +
@@ -509,7 +517,19 @@ color:white;
   .imgs{
     grid-template-columns: repeat(4, 83.6%)
   }
-
+  #popupcontent{
+  color:black;
+  background-color: white;
+  margin:auto;
+  border:1px solid black;
+  width:50%;
+  padding:20px;
+  position: absolute;
+  left:25%;
+  top:33%;
+  height:400px;
+  z-index: 1;
+}
 }
 /* ========================================
   Viðmið - breakpoints 80em = 1600px +

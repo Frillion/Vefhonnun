@@ -39,16 +39,37 @@
 			<p><a href="https://tympanus.net/codrops/css_reference/grid/">CSS grid</a></p>		
 			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod sodales lacus eu tempor. Maecenas eget felis vitae massa pharetra mattis non pellentesque dolor. Suspendisse potenti. Donec lorem risus, hendrerit id est id, efficitur elementum metus. Quisque hendrerit neque non ante interdum euismod. Proin ut nulla pretium, tempor sem at, gravida nisl. Suspendisse potenti. Donec lorem risus, hendrerit id est id, efficitur elementum metus. Quisque hendrerit neque non ante interdum euismod. Proin ut nulla pretium, tempor sem at, gravida nisl.
 			</p>
+			<button id="popup">Skráning</button>
+				<div id="popupbox" class="modal">
+					<div id="popupcontent">
+						<span class="close">&times;</span>
+						<p>Some text</p>
+					</div>
+				</div>
+		<script type="text/javascript">
+			document.getElementById("popup").onclick = function(){
+				document.getElementById("popupbox").style.display = "block";
+			}
+			document.getElementsByClassName("close")[0].onclick = function(){
+				document.getElementById("popupbox").style.display = "none";
+			}
+			window.onclick = function(event){
+				if (event.target == document.getElementById("popupbox")){
+					document.getElementById("popupbox").style.display = "none";
+				}
+			}
+		</script>
 		</article>
 		<aside class="haegri">
 			<a href ="https://tskoli.is/" class="ad" id="auglysing">
 				<img src="myndir/skoli_logo.jpg" class= admynd>
-				<h3 class="adtexti">
-					
-				</h3>
 				<div class="anim">
 					<div class="adbox">
-						
+						<p class=adtexti>
+							Gerðu þig tulbúinn fyrir atvinnu lífið með fjölbreytnu brautum tækniskólans.
+							Skoðaðu upplýsingar á heimasíðu tækniskólans
+							=><span class="fakelink">Smeltu Hér</span>
+						</p>
 					</div>
 				</div>
 			</a>

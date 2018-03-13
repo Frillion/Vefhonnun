@@ -12,9 +12,24 @@
 }
 .icon-facebook:before {
   content: "\e900";
-  color: #3b5998;
+  color: #FFF;
+  font-size: 1.9em;
 }
-
+.icon-Youtube:before{
+  content: "\e903";
+  color: #FFF;
+  font-size: 1.9em;
+}
+.icon-snap:before{
+  content: "\e902";
+  color: #000;
+  font-size: 1.9em;
+}
+.icon-pinterest:before{
+  content: "\e901";
+  color: #FFF;
+  font-size: 1.9em;
+}
 /*heimild: https://gridbyexample.com/examples/example13/ */
 
 /* ====== GRID Area ====== */
@@ -45,6 +60,7 @@ footer{
   flex-flow: row;
   position: relative;
   z-index: 5;
+  font-family: icomoon;
 }
 .smediabar a{
   margin-left:10px;
@@ -59,7 +75,10 @@ footer{
   width:2.5em;
   height:2.5em;
   background-color: #3b5998;
-  padding:5px;
+  padding:6px 0px 0px 2px;
+  text-align: center;
+  border:solid black 2px;
+  border-radius: 6px;
 }
 .box_2{
   display:block;
@@ -67,7 +86,9 @@ footer{
   height:2.5em;
   background-color:#ff0000;
   text-align: center;
-  padding:5px;
+  padding:6px 0px 0px 0.5px;
+  border:solid black 2px;
+  border-radius: 6px;
 }
 .box_3{
   display:block;
@@ -75,7 +96,9 @@ footer{
   height:2.5em;
   background-color:#fffc00;
   text-align: center;
-  padding:5px;
+  padding:6px 0px 0px 2.5px;
+  border:solid black 2px;
+  border-radius: 6px;
 }
 .box_4{
   display:block;
@@ -83,7 +106,9 @@ footer{
   height:2.5em;
   background-color:#cb2027;
   text-align: center;
-  padding:5px;
+  padding:6px 0px 0px 2px;
+  border:solid black 2px;
+  border-radius: 6px;
 }
 
 /* ====== GRID Template Areas ===== */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;GAGG;ACHH;;;GAGG;ACHH;;GAEG;ACFH;;;GAGG",
+"sources": ["../scss/mixin_styles.scss","../scss/nested_styles.scss","../scss/ops_styles.scss","../scss/var_styles.scss"],
+"names": [],
+"file": "allstyles.css"
+}

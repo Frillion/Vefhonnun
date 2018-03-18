@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,EAAE,CACD,KAAK,CAAE,OAAiB,CAEzB,EAAE,CACD,KAAK,CAAE,OAAgB,CAExB,EAAE,CACD,KAAK,CAAG,OAAY,CCJrB,OAAQ,CACJ,SAAS,CCAA,IAAI,CDCb,MAAM,CCAG,cAAmB,CDC5B,OAAO,CCAE,mBAAmB,CDGhC,aAAc,CACV,OAAO,CCPG,0BAA0B",
+"sources": ["../scss/funcs_styles.scss","../scss/import_styles.scss","../scss/import_me.scss"],
+"names": [],
+"file": "allstyles.css"
+}

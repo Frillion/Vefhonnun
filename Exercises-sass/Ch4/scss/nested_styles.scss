@@ -3,4 +3,20 @@
  * the nested rules to only apply within the outer rule's selector
  */
 
+ $header-styles:#000 #AAA #FFF 5px inset;
 
+header{
+	display:grid;
+	background-color:#{nth($header-styles,1)};
+	color:#{nth($header-styles,3)};
+	border:#{nth($header-styles,2)} #{nth($header-styles,5)} #{nth($header-styles,4)};
+	h2{
+		color:#{nth($header-styles,2)};
+	}
+	h3{
+		color:#{nth($header-styles,2)};
+	}
+	h4{
+		color:#{nth($header-styles,2)};
+	}
+}

@@ -2,3 +2,14 @@
  * SASS Operators example
  */
 
+$colors: blue;
+$size:12px;
+$number:12;
+$allclass:
+	$colors
+	$size
+	$number
+	;
+	p{
+		color:#{nth($allclass,1)};
+	}

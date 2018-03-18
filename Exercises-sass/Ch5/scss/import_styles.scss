@@ -4,17 +4,14 @@
  */
 
 
-h1, h2 {
-    color: $myColor1;
-}
 
-#mypara {
+.mypara {
     font-size: $myFontSize;
     border: $thinBorder;
     padding: $paddingVar;
 }
 
-#mypara:after {
+.mypara:after {
     content: $myStringVar;
 }
 

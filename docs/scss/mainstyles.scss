@@ -1,0 +1,85 @@
+$header-styles:#FFF #000 #0FA 5px inset 1px #555;
+
+body{
+	margin:auto;
+	display:grid;
+	grid-gap:0;
+	grid-template-areas:
+		"top"
+		"main"
+		"foot";
+}
+
+header{
+	max-width:100%;
+	grid-area:"top";
+	background-color: #{nth($header-styles,2)};
+	color: #{nth($header-styles,1)};
+	border: #{nth($header-styles,3)} #{nth($header-styles,4)} #{nth($header-styles,5)};
+	h1{
+		margin-left:5px;
+	}
+}
+
+a{
+	color:white;
+	border-radius:5px;
+	border: #{nth($header-styles,3)} #{nth($header-styles,6)} #{nth($header-styles,5)};
+}
+a:hover{
+	color:white;
+	border: #{nth($header-styles,3)} #{nth($header-styles,6)} #{nth($header-styles,5)};
+}
+.vinstri{
+	grid-area:"vinstri";
+	padding:10px;
+}
+.haegri{
+	grid-area:"haegri";
+	padding:10px;
+}
+.content{
+	display:grid;
+	grid-area:"main";
+	grid-template-areas:
+		"headr"
+		"vinstri"
+		"haegri"
+		;
+	background: lighten(#0FA, 15%);
+	padding:10px;
+	border:#{nth($header-styles,3)} #{nth($header-styles,6)} #{nth($header-styles,5)};
+}
+.sass{
+	background: lighten(#0FA, 15%);
+	margin:0px;
+	border:#{nth($header-styles,3)} #{nth($header-styles,6)} #{nth($header-styles,5)};
+	padding:10px;
+}
+
+footer{
+	padding:10px;
+	background: linear-gradient(to right,#{nth($header-styles,2)},lighten(#0FA,15%));
+	grid-area:"foot";
+	border: #{nth($header-styles,3)} #{nth($header-styles,4)} #{nth($header-styles,5)};
+	color:#{nth($header-styles,1)};
+}
+
+@media screen and (min-width:48em){
+	.content{
+		grid-template-areas:
+		"headr"
+		"vinstri haegri"
+		;
+		grid-template-columns:2fr 2fr;
+	}
+	body{
+		max-width:42em;
+	}
+}
+
+@media screen and (min-width:80em){
+	body{
+		max-width:77em;
+	}
+}

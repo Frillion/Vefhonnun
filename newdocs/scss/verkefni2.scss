@@ -1,0 +1,403 @@
+$maincolor:#ccff33;
+$secondarycolor:#000;
+$linkcolors: green,blue;
+@mixin gradient($choice){
+  @if $choice {
+    background: -webkit-linear-gradient(to bottom right,lighten($maincolor,85%),$maincolor );
+    background: -o-linear-gradient(to bottom right,lighten($maincolor,85%), $maincolor);
+    background: linear-gradient(to bottom right,lighten($maincolor,85%), $maincolor);
+  } @else {
+      background: -webkit-linear-gradient(to bottom right,lighten($secondarycolor,85%), $secondarycolor);
+      background: -o-linear-gradient(to bottom right,lighten($secondarycolor,85%), $secondarycolor);
+      background: linear-gradient(to bottom right,lighten($secondarycolor,85%),$secondarycolor );
+  }
+}
+
+*, *:before, *:after {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+    box-sizing: border-box; 
+}
+
+/*heimild: https://gridbyexample.com/examples/example13/ */
+
+/* ====== GRID Area ====== */
+.topnav{
+  grid-area: topnav;
+}
+header{
+  grid-area: header;
+}
+.content{
+  grid-area: content;
+}
+footer{
+  grid-area: footer;
+}
+.haegri{
+  grid-area: haegri;
+}
+.midja{
+  grid-area: midja;
+}
+
+
+
+/* ====== GRID Template Areas ===== */
+body{
+  display: grid;
+  grid-gap: 0;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer"
+    "topnav";
+}
+
+/* ====== Base litir + padding ====== */
+
+body {
+  line-height: 1.5em;
+  @include gradient(false);
+}
+.topnav {
+  @include gradient(false); 
+}
+header {
+  @include gradient(true);
+  border: 2.5px solid $secondarycolor;
+}
+footer {
+  @include gradient(true);
+  color:$secondarycolor;
+  border: 2.5px solid $secondarycolor;
+  a{
+    color: #{nth($linkcolors, 1)};
+  }
+}
+.midja {
+  @include gradient(false);
+  color:white;
+  border: 2.5px solid $secondarycolor;
+  a{
+    color: #{nth($linkcolors, 2)};
+  }
+}
+.vinstri, 
+.haegri {
+  @include gradient(true);
+  border: 2.5px solid black;
+}
+
+header,
+footer,
+.midja,
+.vinstri, 
+.haegri {
+  padding: 1em; 
+}
+/* ====== leturstílar ====== */
+
+header h1 {
+  color: #fff;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.midja h2 {
+  margin: .7em 0 .8em 0;
+}
+.midja h4 {
+  text-align: justify;
+  margin: .4em 0;
+}
+.midja p {
+  text-align: justify;
+}
+/* ========================================
+  Efnisyfirlit
+  ======================================== */
+.Efni{
+  display: none;
+}
+label {
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 9px;
+  transition: all .15s ease;
+  background: black;
+  text-align: center;
+
+}
+.Efni + label{
+  visibility:visible; 
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width: 100%;
+  z-index: 1000000;
+}
+label:hover {
+  color: grey;
+}
+.Efni:checked + label {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: #9799a7;
+}
+.topnav {
+  visibility:visible; 
+  position: fixed;
+  right:-100em;
+  overflow: hidden;
+  transition: all .15s ease;
+  z-index: 1000000;
+}
+.Efni:checked ~ .topmenu {
+  visibility: visible;
+  position:fixed;
+  left:0px;
+  bottom:35px;
+  width:100%;
+  z-index: 1000000;
+}
+
+.topmenu {
+  visibility: visible;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  z-index: 1000000; 
+  flex-flow: column;
+  justify-content: center;
+  background: black;
+}
+.topmenu li {
+  border: 1px solid white;
+  padding: 0;
+}
+
+.topmenu a {
+  display: block;     /* ath! */
+  color: white;
+  background: black;
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+.topmenu a:hover {
+  display: block;     /* ath! */
+  color: black;
+  background: linear-gradient(lightgreen,green);
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+
+
+/* =======================================
+   Myndvinnsla  
+  ======================================== */
+img{
+  max-width: 100%;
+  height:auto;
+  display:block;
+}
+
+.imgs img{
+  margin: 0;
+  padding: 0;
+  border: white 1px solid;
+}
+
+.imgs{
+  width:160px;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+}
+/*  myndir <img> alltaf í 100% stærð munið að vinna og 
+    þjappa myndir í photoshop ! */
+
+/*=================================
+            Modal
+===================================*/
+#popup{
+  background: green;
+  border-radius: 5px;
+  color:white;
+}
+#popup:hover{
+  background:linear-gradient(green,lightgreen);
+}
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  overflow: auto;
+  background:rgb(0,0,0);
+  background: rgba(0,0,0,0.4);
+}
+#popupcontent{
+  color:black;
+  background-color: white;
+  margin:auto;
+  border:1px solid black;
+  width:100%;
+  padding:20px;
+  position: absolute;
+  top:33%;
+  height:300px;
+  z-index: 1;
+}
+.close{
+  color: grey;
+  font-size: 28px;
+  font-weight: bold;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.close:hover,
+.close:focus{
+  color:black;
+  text-decoration:none;
+  cursor:pointer;
+}
+/*  ========================================
+  Viðmið - breakpoints 30em = 480px + 
+  ========================================*/
+
+@media screen and (min-width: 30em) {  /* það má ekki setja slaufusvigann í næstu línu, þá virkar ekki viðmiðið */
+  .imgs{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 324px;
+}
+}
+
+/*  ========================================
+  Viðmið - breakpoints 37.5em = 600px + 
+  ========================================*/
+@media screen and (min-width: 37.5em) {
+  .content {
+    display: grid;
+    grid-gap:0;
+    grid-template-areas:
+      "midja haegri";
+  }
+#popupcontent{
+  color:black;
+  background-color: white;
+  margin:auto;
+  border:1px solid black;
+  width:70%;
+  padding:20px;
+  position: absolute;
+  left:15%;
+  top:10%;
+  height:300px;
+  z-index: 1;
+}
+
+}
+/* ========================================
+  Viðmið - breakpoints 48em = 760px +
+  ======================================== */
+@media screen and (min-width: 48em) {
+  body{
+    display: grid;
+    grid-gap:0;
+    grid-template-areas: 
+      "topnav"
+      "header"
+      "content"
+      "footer"
+  }
+  .content{
+    display: grid;
+    grid-gap:0;
+    grid-template-areas:
+      "midja haegri";
+  }
+  .Efni + label{
+  position: relative;
+  left:-100em;
+  width: 100%;
+}
+  .topnav{
+    position:relative;
+    top:0px;
+    right:0px;
+    height: 70px;
+    z-index: 0;
+  }
+  .topmenu {
+  z-index: 0;
+  position:relative;
+  list-style: none;
+  top:-30px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.imgs{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  width:648px;
+}
+}
+
+/* ========================================
+  Viðmið - breakpoints 60em = 960px +
+  ======================================== */
+@media screen and (min-width: 60em) {
+  body{
+    max-width: 60em;
+    margin: 0 auto;
+  }
+  .content{
+    grid-template-areas: 
+      "midja haegri";
+
+    grid-template-columns: 4fr 1fr;
+  }
+  .imgs{
+    grid-template-columns: repeat(4, 83.6%)
+  }
+  #popupcontent{
+  color:black;
+  background-color: white;
+  margin:auto;
+  border:1px solid black;
+  width:50%;
+  padding:20px;
+  position: absolute;
+  left:25%;
+  top:33%;
+  height:400px;
+  z-index: 1;
+}
+}
+/* ========================================
+  Viðmið - breakpoints 80em = 1600px +
+  ======================================== */
+@media screen and (min-width: 80em){
+  body{
+    max-width: 77em;
+  }
+  .topnav{
+  	height: 45px;
+  }
+}

@@ -6,4 +6,41 @@
 $maincolor:#FFF;
 $text:"Hello World";
 $number:12;
-$multi-var:12 "Hello World";
+$multi-var:#000,#0FF,underline;
+body{
+	display:grid;
+	background-color:$maincolor;
+	grid-template-areas:
+		"header"
+		"content"
+		"footer";
+}
+span{
+	color:#{nth($multi-var,1)};
+}
+.link{
+	text-decoration:#{nth($multi-var,3)};
+	color:#{nth($multi-var,1)};
+}
+.link:hover{
+	color:#{nth($multi-var,2)};
+}
+.mypara{
+	grid-area:texti;
+}
+.listi1{
+	grid-area:listi;
+}
+.main-content{
+	display:grid;
+	grid-template-areas:
+		"texti listi";
+	grid-area:content;
+	grid-template-columns: 4fr 1fr;
+}
+footer{
+	grid-area:footer;
+}
+header{
+	grid-area:header;
+}

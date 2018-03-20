@@ -1,0 +1,65 @@
+@mixin boxsize{
+  width:2.5em;
+  height:2.5em;
+}
+.smediabar{
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  z-index: 5;
+  a{
+    margin-left:10px;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    z-index: 1;
+  }
+}
+
+.box_1{
+  @include boxsize;
+  display:block;
+  background-color: #3b5998;
+  text-align: center;
+  padding:5px;
+}
+.box_2{
+  @include boxsize;
+  display:block;
+  background-color:#ff0000;
+  text-align: center;
+  padding:5px;
+}
+.box_3{
+  @include boxsize;
+  display:block;
+  background-color:#fffc00;
+  text-align: center;
+  padding:5px;
+}
+.box_4{
+  @include boxsize;
+  display:block;
+  background-color:#cb2027;
+  text-align: center;
+  padding:5px;
+}
+
+@media screen and (min-width: 60em) {
+
+.smediabar{
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  top:4em;
+  left:-.5em;
+  border-left:black solid 3px;
+  a{
+  display: block;
+  margin-left: 0px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  }
+}
+}

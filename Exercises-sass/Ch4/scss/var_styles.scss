@@ -6,6 +6,7 @@
 $maincolor:#FFF;
 $text:"Hello World";
 $number:12;
+<<<<<<< HEAD
 $multi-var:#000,#0FF,underline;
 body{
 	display:grid;
@@ -43,4 +44,19 @@ footer{
 }
 header{
 	grid-area:header;
+=======
+$multi-var:#000 #AAA red;
+
+body{
+	display:grid;
+	background-color:$maincolor;
+	text-align:center;
+}
+.link{
+	color:#{nth($multi-var,1)};
+}
+
+.link:hover{
+	color:#{nth($multi-var,3)};
+>>>>>>> 3dbaf8fc943fe55f49233473df3949aeab8fe584
 }

@@ -1,0 +1,13 @@
+/*
+ * Using functions in SASS
+ */ 
+
+h1{
+	color: lighten(navy,50%);
+}
+h2{
+	color: darken(navy,10%);
+}
+h3{
+	color:  invert(navy);
+}

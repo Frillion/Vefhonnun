@@ -1,7 +1,16 @@
+
+$facebookblue: #3b5998;
+$youtubered: #ff0000;
+$snapchatyellow: #fffc00;
+$pinterestred: #cb2027;
+@mixin smediagradient(){
+  background:linear-gradient;
+}
 @mixin boxsize{
   width:2.5em;
   height:2.5em;
 }
+
 .smediabar{
   display: flex;
   flex-flow: row;
@@ -19,28 +28,28 @@
 .box_1{
   @include boxsize;
   display:block;
-  background-color: #3b5998;
+  background-color: $facebookblue;
   text-align: center;
   padding:5px;
 }
 .box_2{
   @include boxsize;
   display:block;
-  background-color:#ff0000;
+  background-color:$youtubered;
   text-align: center;
   padding:5px;
 }
 .box_3{
   @include boxsize;
   display:block;
-  background-color:#fffc00;
+  background-color:$snapchatyellow;
   text-align: center;
   padding:5px;
 }
 .box_4{
   @include boxsize;
   display:block;
-  background-color:#cb2027;
+  background-color:$pinterestred;
   text-align: center;
   padding:5px;
 }

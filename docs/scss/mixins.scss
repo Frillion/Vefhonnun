@@ -1,0 +1,12 @@
+@mixin link-style1{
+	background: linear-gradient(to bottom right,green, black);
+}
+@mixin link-style2{
+	background: linear-gradient( to top left,green,black)
+}
+a{
+	@include link-style1;
+}
+a:hover{
+	@include link-style2;
+}

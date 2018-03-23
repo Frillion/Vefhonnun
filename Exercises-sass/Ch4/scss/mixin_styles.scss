@@ -3,3 +3,21 @@
  * and used with the @include directive
  */
 
+@mixin color{
+	color:grey;
+}
+@mixin darkcolor{
+	color:#333;
+}
+
+@mixin color-choice($choice) {
+	@if $choice{
+		@include color;
+	} @else {
+		@include darkcolor;
+	}
+}
+
+ul{
+	@include color-choice(false);
+}

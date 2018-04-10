@@ -1,0 +1,85 @@
+.ad{
+  display:block;
+  position:relative;
+  overflow: hidden;
+  height:600px;
+  width: 300px;
+  background-image:url("../myndir/taekniskoli.jpg");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  color:black;
+  animation-name:transition;
+  animation-duration: 100s;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
+}
+.adbox{
+  background:linear-gradient(rgba(0,0,255,0.6),rgba(0,0,255,0.3));
+  display: block;
+  position: absolute;
+  z-index: 39;
+  transform: rotate(295deg);
+  height:450px;
+  width: 280px;
+  bottom:25px;
+  left:-4.5px;
+}
+.anim{
+  overflow: hidden;
+  position:relative;
+  top:540px;
+  transform: rotate(65deg);
+  height:1000px;
+  width:1000px;
+  animation-name: move;
+  animation-duration: 25s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  left:30px;
+}
+.adtexti{
+animation-name:transp;
+animation-duration:25s;
+animation-delay: 3s;
+animation-iteration-count: infinite;
+position: absolute;
+left:15px;
+top:200px;
+color: black;
+z-index: 9999;
+opacity:0;
+color:white;
+}
+.admynd{
+  animation-name: transp;
+  animation-delay: 3s;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  position:absolute;
+  opacity: 0;
+}
+.fakelink{
+  text-decoration: underline;
+  color: lightgreen;
+}
+
+@keyframes transition{
+  0% {background-image: url("../myndir/taekniskoli.jpg");}
+  50% {background-image: url("../myndir/taekniskoli2.jpg");}
+  75% {background-image: url("../myndir/taekniskoli2.jpg");}
+  100% {background-image: url("../myndir/taekniskoli.jpg");}
+}
+@keyframes transp{
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  75% {opacity: 1;}
+  80% {opacity: 0;}
+  100% {opacity: 0;}
+}
+@keyframes move {
+  0% {top: 540px;}
+  25% {top: 540px;}
+  50% {top: 90px;}
+  75% {top: 90px;}
+  100% {top: 540px;}
+}

@@ -1,0 +1,24 @@
+$maincolor:#FFF;
+$secondarycolor:#000;
+@mixin gradient($choice){
+  @if $choice {
+    background: -webkit-linear-gradient(to bottom right,$maincolor,darken($maincolor,15%) );
+    background: -o-linear-gradient(to bottom right,$maincolor, darken($maincolor,15%));
+    background: linear-gradient(to bottom right,$maincolor, darken($maincolor,15%));
+  } @else {
+      background: -webkit-linear-gradient(to bottom right,lighten($secondarycolor,85%), $secondarycolor);
+      background: -o-linear-gradient(to bottom right,lighten($secondarycolor,85%), $secondarycolor);
+      background: linear-gradient(to bottom right,lighten($secondarycolor,85%),$secondarycolor);
+  }
+}
+
+table{
+	border-collapse: separate;
+	border-spacing: 0;
+}
+th,td{
+	padding:15px 20px;
+}
+thead{
+	@include gradient(true);
+}

@@ -1,0 +1,104 @@
+
+$facebookblue: #3b5998;
+$youtubered: #ff0000;
+$snapchatyellow: #fffc00;
+$pinterestred: #cb2027;
+@mixin boxsize{
+  width:2.5em;
+  height:2.5em;
+}
+@mixin shape{
+  border-radius: 5px;
+  padding: 6px 6px 5px 4px;
+  border: solid black 2px;
+}
+
+.smediabar{
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  z-index: 5;
+  a{
+    margin-left:10px;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    z-index: 1;
+  }
+}
+
+.box_1{
+  @include shape;
+  @include boxsize;
+  display: block;
+  background-color: $facebookblue;
+}
+.box_2{
+  @include shape;
+  @include boxsize;
+  display: block;
+  background-color: $youtubered;
+}
+.box_3{
+  @include shape;
+  @include boxsize;
+  display: block;
+  background-color: $snapchatyellow;
+}
+.box_4{
+  @include shape;
+  @include boxsize;
+  display: block;
+  background-color: $pinterestred;
+}
+
+@font-face{
+  font-family: icomoon;
+  src: url(Font/icomoon.svg);
+  src: url(Font/icomoon.eot);
+  src: url(Font/icomoon.ttf);
+  src: url(Font/icomoon.woff);
+}
+.icon-facebook:before {
+  font-family: icomoon;
+    content: "\e900";
+    color: #FFF;
+    font-size: 1.9em;
+}
+.icon-Youtube:before{
+  font-family: icomoon;
+    content: "\e903";
+    color: #FFF;
+    font-size: 1.9em;
+}
+.icon-snap:before{
+  font-family: icomoon;
+    content: "\e902";
+    color: #000;
+    font-size: 1.9em;
+}
+.icon-pinterest:before{
+  font-family: icomoon;
+    content: "\e901";
+    color: #FFF;
+    font-size: 1.9em;
+}
+
+@media screen and (min-width: 60em) {
+
+.smediabar{
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  top: 4em;
+  left: -.5em;
+  border-left: black solid 3px;
+  a{
+  display: block;
+  margin-left: 0px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  }
+}
+}
